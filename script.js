@@ -173,13 +173,24 @@ document.querySelectorAll('[data-ambient]').forEach(layer => {
   }
 });
 
-// ---------- Sound toggle ----------
-const soundToggle = document.getElementById('soundToggle');
-soundToggle?.addEventListener('click', () => {
-  if (!heroVideo) return;
-  heroVideo.muted = !heroVideo.muted;
-  soundToggle.classList.toggle('is-on', !heroVideo.muted);
-});
+// ---------- Hero video autoplay ----------
+// iOS only honours autoplay when muted is set as a property, and low-power mode still blocks it
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+
+  const startHeroVideo = () => heroVideo.play().catch(() => {});
+  startHeroVideo();
+  heroVideo.addEventListener('loadeddata', startHeroVideo, { once: true });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) startHeroVideo();
+  });
+
+  // last resort for browsers that refuse until the user interacts
+  ['touchstart', 'pointerdown'].forEach(evt => {
+    document.addEventListener(evt, startHeroVideo, { once: true, passive: true });
+  });
+}
 
 // ---------- Custom cursor ----------
 const cursorDot = document.getElementById('cursorDot');
