@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Janus Studio — Stories Unbound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="logo">
+    <svg class="logo-mark" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <path d="M7 1v12M7 1 2 7l5 6M7 1l5 6-5 6"/>
+    </svg>
+    <span>Janus Studio</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#work" data-nav>Work</a></li>
+    <li><a href="#story" data-nav>About</a></li>
+    <li><a href="#contact" data-nav>Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero-pin" id="heroPin">
+<header class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="">
+    <source src="Glowing_book_with_floating_letters_202609051002.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-scroll" id="heroOverlayScroll"></div>
+
+  <div class="hero-frost" id="heroFrost" aria-hidden="true"></div>
+
+  <div class="petal-field" id="petalField">
+    <div class="petal-depth petal-depth-3" id="petalDepth3"></div>
+    <div class="petal-depth petal-depth-2" id="petalDepth2"></div>
+    <div class="petal-depth petal-depth-1" id="petalDepth1"></div>
+  </div>
+
+  <div class="hero-content" id="heroContent">
+    <h1 class="hero-title">
+      <span class="reveal-up" style="--d:0.05s">STORIES</span>
+      <span class="reveal-up" style="--d:0.18s">UNBOUND</span>
+    </h1>
+    <p class="hero-subtitle reveal-up" style="--d:0.3s">Some tales never<br>really end.</p>
+  </div>
+
+  <div class="hero-story" id="heroStory">
+    <span class="hero-story-tag" data-anim="tag">Our Story</span>
+    <h2 class="hero-story-title">
+      <span class="line" data-anim="line"><i>Every page holds</i></span>
+      <span class="line" data-anim="line"><i>a door left open.</i></span>
+    </h2>
+    <div class="hero-chapter">
+      <div class="hero-chapter-number" data-anim="number">01</div>
+      <h3 data-anim="heading">The First Page</h3>
+      <p data-anim="words">Janus Studio began in a room full of borrowed books and unfinished
+      drafts — a place where old stories were taken apart just to see how
+      they worked. We were never satisfied with telling a story the way it
+      had always been told. We wanted to build worlds a reader could fall
+      into, and forget, for a while, that they were reading at all.</p>
+    </div>
+  </div>
+
+  <div class="scroll-cue reveal-up" id="scrollCue" style="--d:0.5s">
+    <span>Scroll to continue</span>
+    <div class="scroll-line"><i></i></div>
+  </div>
+
+  <button class="sound-toggle reveal-up" id="soundToggle" style="--d:0.5s" aria-label="Toggle sound">
+    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  </button>
+</header>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Narrative Design ✦ Interactive Fiction ✦ Brand Voice ✦ World Building ✦ Editorial Systems ✦</span>
+    <span>Narrative Design ✦ Interactive Fiction ✦ Brand Voice ✦ World Building ✦ Editorial Systems ✦</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="ambient" data-ambient="4" aria-hidden="true"></div>
+  <div class="chapters">
+
+    <article class="chapter glass-card" data-index="02" data-tilt>
+      <span class="card-glow"></span>
+      <div class="chapter-number">02</div>
+      <div class="chapter-body">
+        <h3>Letters Set Free</h3>
+        <p>We believe a story is never truly finished when the last page is
+        turned. It lingers, rearranges itself in memory, and finds its way
+        back into new forms — a film, a game, a quiet conversation years
+        later. That belief became our craft: designing narratives that
+        escape their own bindings and keep moving.</p>
+      </div>
+    </article>
+
+    <article class="chapter glass-card" data-index="03" data-tilt>
+      <span class="card-glow"></span>
+      <div class="chapter-number">03</div>
+      <div class="chapter-body">
+        <h3>Where We Work</h3>
+        <p>Today, Janus Studio partners with writers, brands, and
+        studios to craft narrative experiences — from interactive fiction
+        to brand storytelling and design systems built around a single,
+        clear voice. Every project starts the same way: an open book,
+        and the question of what wants to escape it.</p>
+      </div>
+    </article>
+
+    <article class="chapter glass-card" data-index="04" data-tilt>
+      <span class="card-glow"></span>
+      <div class="chapter-number">04</div>
+      <div class="chapter-body">
+        <h3>What Comes Next</h3>
+        <p>The next chapter is always being written. We're building tools
+        and collaborations that let readers step past the page entirely —
+        stories that respond, evolve, and stay unbound long after you've
+        closed the cover.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat reveal-up"><b data-count="48">0</b><span>Stories told</span></div>
+    <div class="stat reveal-up"><b data-count="12">0</b><span>Awards won</span></div>
+    <div class="stat reveal-up"><b data-count="9">0</b><span>Years unbound</span></div>
+    <div class="stat reveal-up"><b data-count="36" data-suffix="+">0</b><span>Partners</span></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="ambient" data-ambient="3" aria-hidden="true"></div>
+  <div class="section-head">
+    <span class="section-tag">Selected Work</span>
+    <h2 class="section-title">A few chapters<br>we're proud of.</h2>
+  </div>
+
+  <div class="work-grid">
+
+    <article class="work-card reveal-up" data-cursor="view" data-tilt>
+      <span class="card-glow"></span>
+      <div class="work-media">
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1400&auto=format&fit=crop')"></div>
+        <span class="shine"></span>
+        <span class="work-index">01</span>
+        <div class="work-hover"><span>View Project</span><i>→</i></div>
+      </div>
+      <div class="work-info">
+        <h4>The Wandering Archive</h4>
+        <div class="chips"><span>Interactive Fiction</span><span>2025</span></div>
+      </div>
+    </article>
+
+    <article class="work-card reveal-up" data-cursor="view" data-tilt>
+      <span class="card-glow"></span>
+      <div class="work-media">
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1400&auto=format&fit=crop')"></div>
+        <span class="shine"></span>
+        <span class="work-index">02</span>
+        <div class="work-hover"><span>View Project</span><i>→</i></div>
+      </div>
+      <div class="work-info">
+        <h4>Ivy &amp; Ink</h4>
+        <div class="chips"><span>Brand Identity</span><span>2025</span></div>
+      </div>
+    </article>
+
+    <article class="work-card reveal-up" data-cursor="view" data-tilt>
+      <span class="card-glow"></span>
+      <div class="work-media">
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1400&auto=format&fit=crop')"></div>
+        <span class="shine"></span>
+        <span class="work-index">03</span>
+        <div class="work-hover"><span>View Project</span><i>→</i></div>
+      </div>
+      <div class="work-info">
+        <h4>Marginalia</h4>
+        <div class="chips"><span>Editorial System</span><span>2024</span></div>
+      </div>
+    </article>
+
+    <article class="work-card reveal-up" data-cursor="view" data-tilt>
+      <span class="card-glow"></span>
+      <div class="work-media">
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1509266272358-7701da638078?q=80&w=1400&auto=format&fit=crop')"></div>
+        <span class="shine"></span>
+        <span class="work-index">04</span>
+        <div class="work-hover"><span>View Project</span><i>→</i></div>
+      </div>
+      <div class="work-info">
+        <h4>Nightfall Press</h4>
+        <div class="chips"><span>Web Experience</span><span>2024</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps">
+  <div class="ambient" data-ambient="3" aria-hidden="true"></div>
+  <div class="section-head">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Craft, in four<br>disciplines.</h2>
+  </div>
+
+  <div class="caps-grid">
+    <div class="cap-card glass-card reveal-up" data-tilt>
+      <span class="card-glow"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/><path d="M11 9H4M20 9h-7"/></svg>
+      <h5>Narrative Design</h5>
+      <p>Story architecture, character systems, and plot structures built to hold weight.</p>
+    </div>
+    <div class="cap-card glass-card reveal-up" data-tilt>
+      <span class="card-glow"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      <h5>World Building</h5>
+      <p>Places with history, rules, and consequence — worlds readers can get lost inside.</p>
+    </div>
+    <div class="cap-card glass-card reveal-up" data-tilt>
+      <span class="card-glow"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 18V7a3 3 0 0 1 6 0v11M4 12h6"/><path d="M14 18V9M14 9h3a3 3 0 0 1 0 6h-3"/></svg>
+      <h5>Brand Voice</h5>
+      <p>A tone that stays recognisable across every page, screen, and spoken line.</p>
+    </div>
+    <div class="cap-card glass-card reveal-up" data-tilt>
+      <span class="card-glow"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3.5"/></svg>
+      <h5>Interactive Systems</h5>
+      <p>Branching, responsive experiences that let the reader shape what happens next.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer class="contact" id="contact">
+  <div class="ambient" data-ambient="4" aria-hidden="true"></div>
+  <span class="section-tag">Get In Touch</span>
+  <h2 class="section-title">Let's write<br>something unbound.</h2>
+  <a href="mailto:hello@janus.studio" class="magnetic-btn" data-magnetic>
+    <span>hello@janus.studio</span>
+  </a>
+
+  <div class="footer-bottom">
+    <span>© 2026 Janus Studio</span>
+    <div class="footer-links">
+      <a href="#hero">Home</a>
+      <a href="#work">Work</a>
+      <a href="#story">About</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
