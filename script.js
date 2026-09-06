@@ -187,17 +187,27 @@ document.querySelectorAll('[data-ambient]').forEach(layer => {
 if (heroVideo) {
   heroVideo.muted = true;
   heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
 
   const startHeroVideo = () => heroVideo.play().catch(() => {});
+  const retryEvents = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough'];
+
+  retryEvents.forEach(evt => heroVideo.addEventListener(evt, startHeroVideo));
+  ['touchstart', 'pointerdown'].forEach(evt => {
+    document.addEventListener(evt, startHeroVideo, { passive: true });
+  });
+  heroVideo.addEventListener('playing', () => {
+    retryEvents.forEach(evt => heroVideo.removeEventListener(evt, startHeroVideo));
+    ['touchstart', 'pointerdown'].forEach(evt => {
+      document.removeEventListener(evt, startHeroVideo);
+    });
+  }, { once: true });
+
   startHeroVideo();
-  heroVideo.addEventListener('loadeddata', startHeroVideo, { once: true });
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) startHeroVideo();
-  });
-
-  // last resort for browsers that refuse until the user interacts
-  ['touchstart', 'pointerdown'].forEach(evt => {
-    document.addEventListener(evt, startHeroVideo, { once: true, passive: true });
   });
 }
 
