@@ -1,3 +1,12 @@
+// ---------- Reset scroll position on reload ----------
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+const navigationEntry = performance.getEntriesByType('navigation')[0];
+if (navigationEntry?.type === 'reload') {
+  history.replaceState(null, '', `${location.pathname}${location.search}`);
+  window.scrollTo(0, 0);
+}
+
 // ---------- Navbar scroll state ----------
 const navbar = document.getElementById('navbar');
 const progressBar = document.getElementById('progressBar');
